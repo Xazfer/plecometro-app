@@ -4,7 +4,7 @@ import { Text } from 'react-native'
 export default function App() {
     return (
         <View>
-            <Text style={{textAlign: 'center'}}>Bienvenido al Login de Plecómetro</Text>
+            <Text style={{textAlign: 'center'}}>Historial de Plecómetro</Text>
         </View>
     );
   }
@@ -17,4 +17,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
-  
