@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
 import Svg, { Path, Defs, LinearGradient, Stop } from "react-native-svg"
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window')
 
 export default function Login() {
+    const navigation = useNavigation();
 
     function SvgTop() {
         return (
@@ -56,32 +58,17 @@ export default function Login() {
         <View style={styles.mainContainer}>
             <View style={styles.containerSVG}>
                 <SvgTop>
-                    <View style={styles.containerPleco}>
-                        <Image style={styles.pleco} source={require('../images/plecometro.png')}></Image>
-                    </View>
-                    {/* <View style={{flex:4, flexDirection: 'row'}}>
-                        <View style={{flex:1}}>
                     
-                        </View>
-                        <View style={styles.containerPleco}>
-                            <Image style={styles.pleco} source={require('../images/plecometro.png')}></Image>
-                        </View>
-                        <View style={{flex:1}}>
-                    
-                        </View>
-                    </View> */}
                 </SvgTop>
             </View>
             <View style={styles.container}>
                 <Text style={styles.title}>Bienvenido</Text>
-                <Text style={styles.subTitle}>Iniciar sesión en su cuenta</Text>
+                <Text style={styles.subTitle}>Inicio de sesión</Text>
                 <TextInput style={styles.textInput} placeholder='correo@email.com'></TextInput>
                 <TextInput style={styles.textInput} placeholder='contraseña' secureTextEntry={true}></TextInput>
                 <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
-                <TouchableOpacity style={styles.containerBtn}>
-                    <LinearGradient style={styles.btnSignIn} colors={['#9abcdd', '#97c2c1']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-                        <Text style={styles.text}>Iniciar sesión</Text>
-                    </LinearGradient>
+                <TouchableOpacity style={styles.containerBtn} onPress={() => navigation.navigate("HomeScreen")}>
+                    <Text style={styles.text}>Iniciar sesión</Text>
                 </TouchableOpacity>
                 <Text style={styles.forgotPassword}>¿Aún no tienes cuenta?</Text>
                 <StatusBar style="auto" />
@@ -117,13 +104,13 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
     },
     title: {
-        fontSize: 60,
+        fontSize: 40,
         color: '#000000',
         fontWeight: 'bold',
     },
     subTitle: {
         fontSize: 20,
-        color: '#c9c9c9',
+        color: '#a7a7a7',
     },
     textInput: {
         width: '80%',
@@ -141,19 +128,17 @@ const styles = StyleSheet.create({
     },
     containerBtn: {
         width: 250,
+        height: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
+        marginTop: 40,
+        borderRadius: 25,
+        borderWidth: 2,
+        backgroundColor: "#cad8d2"
     },
     text: {
         fontSize: 14,
         fontWeight: 'bold',
         color: '#ffffff',
     },
-    btnSignIn: {
-        width: '80%',
-        height: 50,
-        borderRadius: 25,
-        padding: 10,
-    }
 });
