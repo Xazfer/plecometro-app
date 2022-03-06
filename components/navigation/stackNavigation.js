@@ -8,6 +8,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Splash from "../splash";
 import Login from "../login";
 import HomeScreen from "../mainScreen/homeScreen";
+import History from "../history/history";
 import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 const HomeStackNavigator = createStackNavigator();
@@ -34,8 +35,20 @@ function MyTabs() {
             component = {MyStack}
             options = {{
                 tabBarLabel: 'Inicio',
-                tabBarIcon: ({ color, siza }) => (
+                tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcons name="home" color={color} size={size}></MaterialCommunityIcons>
+                ),
+                //tabBarBadge: 2,
+                headerShown: false,
+            }}
+            />
+            <Tab.Screen
+            name="History"
+            component = {MyStack}
+            options = {{
+                tabBarLabel: 'Historial',
+                tabBarIcon: ({ color, size }) => (
+                    <MaterialCommunityIcons name="history" color={color} size={size}></MaterialCommunityIcons>
                 ),
                 //tabBarBadge: 2,
                 headerShown: false,
