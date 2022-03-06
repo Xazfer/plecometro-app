@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , TextInput, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 //import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {

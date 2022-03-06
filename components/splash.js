@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Stylesheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient'
 import * as Animatable from 'react-native-animatable'
 export default class Splash extends Component {
@@ -16,7 +17,7 @@ export default class Splash extends Component {
     render() {
         return(
             <LinearGradient colors={['#9abcdd', '#eae7e3']} style={styles.backgradient}>
-                <View style = {Stylesheet.container}>
+                <View style = {styles.container}>
                     <Animatable.Image 
                         animation="pulse" 
                         easing="ease-out" 
@@ -32,20 +33,18 @@ export default class Splash extends Component {
     }
 }
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
     backgradient: {
-        display: flex,
         flex: 1,
     },
     container: {
-        display: flex,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
     title: {
         fontWeight: 'bold',
-        fontSiza: 18,
+        fontSize: 18,
         color: '#000000'
     }
 })

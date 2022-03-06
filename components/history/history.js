@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { Text } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
-export default function App() {
-    return (
-        <View>
-            <Text style={{textAlign: 'center'}}>Historial de Plecómetro</Text>
-        </View>
-    );
-  }
+export default class History extends Component() {
+    render() {
+        return (
+            <View>
+                <Text style={{textAlign: 'center'}}>Historial de Plecómetro</Text>
+            </View>
+        );
+    }
+}
   
 const styles = StyleSheet.create({
     container: {

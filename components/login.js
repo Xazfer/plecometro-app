@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import Svg, { G, Rect, Circle, Defs, ClipPath } from "react-native-svg"
 import { LinearGradient } from 'expo-linear-gradient';
 
