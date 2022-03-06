@@ -1,6 +1,6 @@
 import React from "react";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/botton-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
