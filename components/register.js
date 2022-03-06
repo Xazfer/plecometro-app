@@ -1,49 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , TextInput, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 //import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function App() {
-  return (
-  // <SafeAreaProvider> 
-     <View style={styles.container}>
-       <View style={styles.inputContainer}>
-      <View style={styles.form}>
-        <Text style={styles.text}>Nombre</Text>
-      <TextInput style={(styles.input)} placeholder="Nombre" />
-      <Text style={styles.text}>Correo</Text>
-      <TextInput style={(styles.input)} placeholder="Correo" />
-      <Text style={styles.text}>Contraseña</Text>
-      <TextInput style={(styles.input)} placeholder="Contraseña"/>
-      <Text style={styles.text}>Lugar</Text>
-      <TextInput style={(styles.input)} placeholder="Lugar de residencia" />
-      
-      <StatusBar style="auto" />
-      
-      <TouchableOpacity style={styles.containerBtn}>
-                  
-                        <Text style={styles.text}>Registrarse</Text>
-      </TouchableOpacity>
-    
+export default class Register extends Component() {
+  render() {
+    return (
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <View style={styles.inputContainer}>
+          <View style={styles.form}>
+            <Text style={styles.text}>Nombre</Text>
+            <TextInput style={(styles.input)} placeholder="Nombre" />
+            <Text style={styles.text}>Correo electrónico</Text>
+            <TextInput style={(styles.input)} placeholder="Correo" />
+            <Text style={styles.text}>Contraseña</Text>
+            <TextInput style={(styles.input)} placeholder="Contraseña"/>
+            <Text style={styles.text}>Repetir contraseña</Text>
+            <TextInput style={(styles.input)} placeholder="Repetir contraseña"/>
+            <Text style={styles.text}>Lugar</Text>
+            <TextInput style={(styles.input)} placeholder="Lugar de residencia" />
+            <TouchableOpacity style={styles.containerBtn}>
+              <Text style={styles.text}>Registrarse</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
-      </View>
-    </View>
-   // </SafeAreaProvider>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eae7e3',
-
   },
   inputContainer: {
-    //alignself:flex,
     flex: 3,
     marginTop: 5,
     marginBottom:'40%',
     borderRadius: 40,
- 
     backgroundColor: '#697fa3'
   },
   form: {
@@ -58,10 +54,9 @@ const styles = StyleSheet.create({
    // borderWidth:2,
     //marginTop:'5%',
     marginBottom:'3%',
-   
-    borderColor:'black',
+    borderColor:'#000000',
     borderRadius: 10,
-    backgroundColor:'white',
+    backgroundColor:'#ffffff',
 },
   text:{
     fontSize:'20px',
@@ -75,8 +70,5 @@ const styles = StyleSheet.create({
     padding:10,
     alignItems: 'center',
     backgroundColor:'#9abcdd'
-  }
-
-
-  
+  }  
 });
