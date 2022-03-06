@@ -3,11 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 
 //Screens
-import Login from "../login";
 import Splash from "../splash";
-import HomeScreen from "../mainScreen/homeScreen";
+import Login from "../login";
+import Register from "../register";
 import App2 from "../app2";
-import History from "../history/history";
 
 const HomeStackNavigator = createStackNavigator();
 
@@ -17,8 +16,8 @@ function MyStack(){
             initialRouteName="Splash"
         >
             <HomeStackNavigator.Screen 
-                name="HomeScreen" 
-                component={HomeScreen} 
+                name="Splash"
+                component={Splash}
                 options={{
                     headerShown: false,
                 }}>
@@ -31,8 +30,8 @@ function MyStack(){
                 }}>
             </HomeStackNavigator.Screen>
             <HomeStackNavigator.Screen 
-                name="Splash"
-                component={Splash}
+                name="Register" 
+                component={Register} 
                 options={{
                     headerShown: false,
                 }}>

@@ -19,7 +19,7 @@ function MyTabs() {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" size={size} color={color} />
+                        <MaterialCommunityIcons name="home" size={35} color={color} />
                     ),
                     headerShown: false,
                 }}>
@@ -29,7 +29,7 @@ function MyTabs() {
                 component={History}
                 options={{
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="history" size={size} color={color} />
+                        <MaterialCommunityIcons name="history" size={35} color={color} />
                     ),
                     headerShown: false,
                 }}>

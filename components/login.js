@@ -67,10 +67,12 @@ export default function Login() {
                 <TextInput style={styles.textInput} placeholder='correo@email.com'></TextInput>
                 <TextInput style={styles.textInput} placeholder='contraseña' secureTextEntry={true}></TextInput>
                 <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
-                <TouchableOpacity style={styles.containerBtn} onPress={() => navigation.navigate("HomeScreen")}>
+                <TouchableOpacity style={styles.containerBtn} onPress={() => navigation.navigate("App2")}>
                     <Text style={styles.text}>Iniciar sesión</Text>
                 </TouchableOpacity>
-                <Text style={styles.forgotPassword}>¿Aún no tienes cuenta?</Text>
+                <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+                    <Text style={styles.forgotPassword}>¿Aún no tienes cuenta?</Text>
+                </TouchableOpacity>
                 <StatusBar style="auto" />
             </View>
         </View>

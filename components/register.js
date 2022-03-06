@@ -1,46 +1,58 @@
+import React, { Component } from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , TextInput, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View , TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-//import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default class Register extends Component() {
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <View style={styles.inputContainer}>
+export default function Register() {
+  const navigation = useNavigation();
+  return (
+    <View style={styles.container}>
+      <View style={{flex: .5}}></View> 
+      <StatusBar style="auto" />
+      <View elevation={5} style={styles.inputContainer}>
           <View style={styles.form}>
             <Text style={styles.text}>Nombre</Text>
             <TextInput style={(styles.input)} placeholder="Nombre" />
             <Text style={styles.text}>Correo electrónico</Text>
-            <TextInput style={(styles.input)} placeholder="Correo" />
+            <TextInput style={(styles.input)} placeholder="Correo electrónico" />
             <Text style={styles.text}>Contraseña</Text>
             <TextInput style={(styles.input)} placeholder="Contraseña"/>
             <Text style={styles.text}>Repetir contraseña</Text>
             <TextInput style={(styles.input)} placeholder="Repetir contraseña"/>
             <Text style={styles.text}>Lugar</Text>
             <TextInput style={(styles.input)} placeholder="Lugar de residencia" />
-            <TouchableOpacity style={styles.containerBtn}>
-              <Text style={styles.text}>Registrarse</Text>
-            </TouchableOpacity>
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+              <TouchableOpacity style={styles.containerBtn} onPress={() => navigation.navigate("App2")}>
+                <Text style={styles.text}>Registrarse</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#eae7e3',
   },
   inputContainer: {
     flex: 3,
-    marginTop: 5,
+    width: '90%',
+    marginTop: 10,
     marginBottom:'40%',
     borderRadius: 40,
-    backgroundColor: '#697fa3'
+    backgroundColor: '#cad8d2',
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowRadius: 10,
+    shadowOpacity: .8
   },
   form: {
     flex: 1,
@@ -48,27 +60,30 @@ const styles = StyleSheet.create({
     marginLeft:'5%',
     marginRight:'5%',
   },
-
-  input:{
+  input: {
+    width: '100%',
     height: 50,
-   // borderWidth:2,
-    //marginTop:'5%',
-    marginBottom:'3%',
-    borderColor:'#000000',
-    borderRadius: 10,
-    backgroundColor:'#ffffff',
-},
-  text:{
-    fontSize:'20px',
-    fontFamily:'Comic Sans MS',
-    //colorFamily:'#9abcdd',
+    padding: 10,
+    paddingStart: 30,
+    borderRadius: 25,
+    marginBottom: 10,
+    backgroundColor: '#ffffff',
   },
-
-  containerBtn:{
-    borderRadius: 10,
-    marginTop: 30,
-    padding:10,
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: '#000000',
+  },
+  containerBtn: {
+    width: 250,
+    height: 50,
     alignItems: 'center',
-    backgroundColor:'#9abcdd'
-  }  
+    justifyContent: 'center',
+    marginTop: 40,
+    borderRadius: 25,
+    borderWidth: 2,
+    backgroundColor: "#9abcdd",
+    marginBottom: 20
+  },
 });
