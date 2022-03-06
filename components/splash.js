@@ -26,7 +26,7 @@ export default class Splash extends Component {
                         source = {require("../images/plecometro.png")}
                     >
                     </Animatable.Image>
-                    <Text style = {Stylesheet.title}>Plecómetro</Text>
+                    <Text style = {styles.title}>Plecómetro</Text>
                 </View>
             </LinearGradient>
         )
