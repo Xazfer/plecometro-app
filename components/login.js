@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TextInput, Dimensions, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
 import Svg, { Path, Defs, LinearGradient, Stop } from "react-native-svg"
 
 const { width, height } = Dimensions.get('window')
 
-export default function App() {
+export default function Login() {
 
     function SvgTop() {
         return (
@@ -52,9 +51,10 @@ export default function App() {
             </Svg>
         )
     }
+
     return (
-        <View style = {styles.mainContainer}>
-            <View style = {styles.containerSVG}>
+        <View style={styles.mainContainer}>
+            <View style={styles.containerSVG}>
                 <SvgTop>
                     <View style={styles.containerPleco}>
                         <Image style={styles.pleco} source={require('../images/plecometro.png')}></Image>
@@ -72,14 +72,14 @@ export default function App() {
                     </View> */}
                 </SvgTop>
             </View>
-            <View style = {styles.container}>
-                <Text style = {styles.title}>Bienvenido</Text>
-                <Text style = {styles.subTitle}>Iniciar sesión en su cuenta</Text>
-                <TextInput style = {styles.textInput} placeholder='correo@email.com'></TextInput>
-                <TextInput style = {styles.textInput} placeholder='contraseña' secureTextEntry={true}></TextInput>
+            <View style={styles.container}>
+                <Text style={styles.title}>Bienvenido</Text>
+                <Text style={styles.subTitle}>Iniciar sesión en su cuenta</Text>
+                <TextInput style={styles.textInput} placeholder='correo@email.com'></TextInput>
+                <TextInput style={styles.textInput} placeholder='contraseña' secureTextEntry={true}></TextInput>
                 <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
                 <TouchableOpacity style={styles.containerBtn}>
-                    <LinearGradient style={styles.btnSignIn} colors={['#9abcdd', '#97c2c1']} start={{x: 0, y: 0}} end={{x: 1, y: 1}}>
+                    <LinearGradient style={styles.btnSignIn} colors={['#9abcdd', '#97c2c1']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
                         <Text style={styles.text}>Iniciar sesión</Text>
                     </LinearGradient>
                 </TouchableOpacity>
@@ -88,8 +88,8 @@ export default function App() {
             </View>
         </View>
     );
-  }
-  
+}
+
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
@@ -157,4 +157,3 @@ const styles = StyleSheet.create({
         padding: 10,
     }
 });
-  
