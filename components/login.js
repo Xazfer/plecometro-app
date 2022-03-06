@@ -50,31 +50,16 @@ export default function App() {
                     </LinearGradient>
                 </Defs>
             </Svg>
-            // <Svg
-            //     width={375}
-            //     height={812}
-            //     fill="none"
-            //     xmlns="http://www.w3.org/2000/svg"
-            // >
-            //     <G clipPath="url(#a)">
-            //         <Rect width={375} height={812} rx={48} fill="#fff" />
-            //         <G filter="url(#b)">
-            //             <Circle cx={187} cy={251} r={164} fill="#97C2C1" fillOpacity={0.75} />
-            //         </G>
-            //     </G>
-            //     <Defs>
-            //         <ClipPath id="a">
-            //             <Rect width={375} height={812} rx={48} fill="#fff" />
-            //             </ClipPath>
-            //     </Defs>
-            // </Svg>
         )
     }
     return (
         <View style = {styles.mainContainer}>
             <View style = {styles.containerSVG}>
                 <SvgTop>
-                    <View style={{flex:4, flexDirection: 'row'}}>
+                    <View style={styles.containerPleco}>
+                        <Image style={styles.pleco} source={require('../images/plecometro.png')}></Image>
+                    </View>
+                    {/* <View style={{flex:4, flexDirection: 'row'}}>
                         <View style={{flex:1}}>
                     
                         </View>
@@ -84,7 +69,7 @@ export default function App() {
                         <View style={{flex:1}}>
                     
                         </View>
-                    </View>
+                    </View> */}
                 </SvgTop>
             </View>
             <View style = {styles.container}>
